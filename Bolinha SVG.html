@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico 2D Interativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="titulo-pagina">Gráfico 2D Interativo em SVG</h1>
+  </header>
+
+  <main>
+    <div class="graph-container">
+      <svg id="grafico" width="100%" height="300" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet">
+        <!-- Eixo X -->
+        <line class="eixo" x1="40" y1="250" x2="480" y2="250"/>
+        <!-- Eixo Y -->
+        <line class="eixo" x1="40" y1="250" x2="40" y2="20"/>
+
+        <!-- Marcações e rótulos no eixo X -->
+        <g class="marcacoes eixo-x">
+          <line x1="140" y1="250" x2="140" y2="260"/>
+          <text x="140" y="275">20</text>
+          <line x1="240" y1="250" x2="240" y2="260"/>
+          <text x="240" y="275">40</text>
+          <line x1="340" y1="250" x2="340" y2="260"/>
+          <text x="340" y="275">60</text>
+          <line x1="440" y1="250" x2="440" y2="260"/>
+          <text x="440" y="275">80</text>
+        </g>
+
+        <!-- Marcações e rótulos no eixo Y -->
+        <g class="marcacoes eixo-y">
+          <line x1="30" y1="200" x2="40" y2="200"/>
+          <text x="25" y="205">50</text>
+          <line x1="30" y1="150" x2="40" y2="150"/>
+          <text x="25" y="155">100</text>
+          <line x1="30" y1="100" x2="40" y2="100"/>
+          <text x="25" y="105">150</text>
+          <line x1="30" y1="50" x2="40" y2="50"/>
+          <text x="25" y="55">200</text>
+        </g>
+
+        <!-- Ponto que se move -->
+        <circle id="ponto-dados" cx="40" cy="250" r="6" class="ponto"/>
+      </svg>
+    </div>
+
+    <div class="controls">
+      <label for="slider-eixo-x">Valor de X:</label>
+      <input type="range" id="slider-eixo-x" min="0" max="100" value="50">
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
